@@ -4,7 +4,7 @@
     "author": "Suresh Jangale",
     "scripts": {
         "pre-commit": "cd backend && npm run pre-commit && cd ../client && npm run pre-commit",
-        "install-dependencies": "npm install && cd backend && npm install && cd ../client && npm install",
+        "install": "npm install && cd backend && npm install && cd ../client && npm install",
         "build": "cd backend && npm run build && cd ../client && npm run build",
         "start:production": "cd backend && npm run start:production && cd ../client && npm run start:production"
     },
