@@ -6,7 +6,7 @@ import { objectToQueryString } from 'shared/utils/url';
 import { getCookie, removeCookie, signout } from 'shared/utils/authToken';
 
 const defaults = {
-  baseURL: process.env.API_URL || 'http://localhost:8000',
+  baseURL: 'https://peaceful-ravine-42610.herokuapp.com',
   headers: () => ({
     'Content-Type': 'application/json',
     Authorization: `Bearer ${getCookie('token')}`
