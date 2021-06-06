@@ -5,7 +5,7 @@
 **/.DS_Store
 
 # environment config
-**/.env
+# **/.env
 
 # production
 **/build
