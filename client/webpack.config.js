@@ -53,8 +53,8 @@ module.exports = {
     }),
     new webpack.DefinePlugin({
       'process.env': {
-        NODE_ENV: JSON.stringify('production'),
-        API_URL: JSON.stringify('https://peaceful-ravine-42610.herokuapp.com'),
+        NODE_ENV: JSON.stringify('developement'),
+        API_URL: JSON.stringify('http://localhost:8000'),
       },
     }),
   ],
