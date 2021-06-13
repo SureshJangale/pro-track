@@ -4,24 +4,20 @@
     "author": "Suresh Jangale",
     "scripts": {
         "build": "cd client && npm run build",
+        "install-backend": "cd backend && npm install",
         "install-client": "cd client && npm install",
         "heroku-postbuild": "npm run install-client && npm run build",
         "server": "cd backend && npm run start:production",
         "client": "cd client && npm run start:production",
         "start": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
-        "install": "npm install && cd backend && npm install && cd ../client && npm install",
+        "install": "concurrently \"npm install\" \"npm run install-backend\" \"npm run install-client\"",
         "start:production": "cd backend && npm run start:production && cd ../client && npm run start:production"
     },
     "engines": {
         "node": "12.14.0"
     },
     "devDependencies": {
-        "husky": "^4.0.0-beta.5"
-    },
-    "husky": {
-        "hooks": {
-            "pre-commit": "npm run pre-commit"
-        }
+        "concurrently": "^6.2.0"
     },
     "dependencies": {
         "concurrently": "^6.2.0"
