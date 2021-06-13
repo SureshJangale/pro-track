@@ -3,13 +3,12 @@
     "version": "1.0.0",
     "author": "Suresh Jangale",
     "scripts": {
-
         "build": "cd client && npm run build",
         "install-client": "cd client && npm install",
         "heroku-postbuild": "npm run install-client && npm run build",
         "server": "cd backend && npm run start:production",
         "client": "cd client && npm run start:production",
-        "start": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client --prefix client\"",
+        "start": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
         "install": "npm install && cd backend && npm install && cd ../client && npm install",
         "start:production": "cd backend && npm run start:production && cd ../client && npm run start:production"
     },
@@ -24,5 +23,7 @@
             "pre-commit": "npm run pre-commit"
         }
     },
-    "dependencies": {}
+    "dependencies": {
+        "concurrently": "^6.2.0"
+    }
 }
