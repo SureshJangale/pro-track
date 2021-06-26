@@ -10,7 +10,7 @@
         "server": "cd backend && npm run start:production",
         "client": "cd client && npm run start:production",
         "start": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
-        "install": "concurrently \"npm install\" \"npm run install-backend\" \"npm run install-client\"",
+        "install": "npm install && npm run install-backend && npm run install-client",
         "start:production": "cd backend && npm run start:production && cd ../client && npm run start:production"
     },
     "engines": {
