@@ -1,5 +1,5 @@
 {
-    "name": "pro-track",
+    "name": "pro-rack",
     "version": "1.0.0",
     "author": "Suresh Jangale",
     "scripts": {
@@ -10,6 +10,7 @@
         "client": "cd client && npm run start:production",
         "start": "npm run server",
         "postinstall": "(cd backend && npm install --dev); (cd client && npm install --dev)",
+        "heroku-postbuild": "npm run build",
         "start:production": "cd backend && npm run start:production && cd ../client && npm run start:production"
     },
     "engines": {
