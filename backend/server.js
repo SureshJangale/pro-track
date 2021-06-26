@@ -25,7 +25,7 @@ mongoose
     });
 
 // middlewares
-app.use(morgan('dev'));
+app.use(morgan('prod'));
 app.use(bodyParser.json());
 app.use(cookieParser());
 
