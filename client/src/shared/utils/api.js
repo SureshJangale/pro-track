@@ -6,7 +6,7 @@ import { objectToQueryString } from 'shared/utils/url';
 import { getCookie, removeCookie, signout } from 'shared/utils/authToken';
 
 const defaults = {
-  baseURL: 'https://peaceful-ravine-42610.herokuapp.com',
+  baseURL: 'https://pro-track21.herokuapp.com',
   headers: () => ({
     'Content-Type': 'application/json',
     Authorization: `Bearer ${getCookie('token')}`

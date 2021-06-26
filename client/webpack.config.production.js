@@ -61,7 +61,7 @@ module.exports = {
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: JSON.stringify('production'),
-        API_URL: JSON.stringify('https://peaceful-ravine-42610.herokuapp.com'),
+        API_URL: JSON.stringify('https://pro-track21.herokuapp.com/'),
       },
     }),
     new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
