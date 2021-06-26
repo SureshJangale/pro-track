@@ -4,12 +4,12 @@
     "author": "Suresh Jangale",
     "scripts": {
         "build": "cd client && npm run build",
-        "install-backend": "cd backend && npm install",
-        "install-client": "cd client && npm install",
+        "install-backend": "cd backend && npm install --dev",
+        "install-client": "cd client && npm install --dev",
         "server": "cd backend && npm run start:production",
         "client": "cd client && npm run start:production",
         "start": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
-        "postinstall": "(cd backend && npm install); (cd client && npm install)",
+        "postinstall": "(cd backend && npm install --dev); (cd client && npm install --dev)",
         "start:production": "cd backend && npm run start:production && cd ../client && npm run start:production"
     },
     "engines": {
