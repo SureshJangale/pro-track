@@ -8,7 +8,6 @@
 **/.env
 
 # production
-**/build
 **/npm-debug.log*
 
 # others
