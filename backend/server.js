@@ -4,6 +4,8 @@ const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const cors = require('cors');
 const mongoose = require('mongoose');
+const fallback = require('express-history-api-fallback');
+
 require('dotenv').config();
 // bring routes
 const authRoutes = require('./routes/auth');
