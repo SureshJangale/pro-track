@@ -39,6 +39,10 @@ app.use('/', projectRoutes);
 app.use('/', issueRoutes);
 app.use('/', commentRoutes);
 
+app.use(express.static(`${__dirname}/../client/build`));
+
+app.use(fallback(`${__dirname}/../client/build/index.html`));
+
 // port
 const port = process.env.PORT || 8000;
 app.listen(port, () => {
