@@ -33,7 +33,7 @@ app.use(cookieParser());
 
 // cors
 app.use(cors());
-    
+
 // routes middleware
 app.use('/', authRoutes);
 app.use('/', userRoutes);
@@ -41,10 +41,16 @@ app.use('/', projectRoutes);
 app.use('/', issueRoutes);
 app.use('/', commentRoutes);
 
-app.use(express.static(`${__dirname}/../client/build`));
+//app.use(express.static(`${__dirname}/../client/build`));
 
-app.use(fallback(`${__dirname}/../client/build/index.html`));
+//app.use(fallback(`${__dirname}/../client/build/index.html`));
 
+if (process.env.NODE_ENV === 'production') {
+    app.use(express.static(path.join(__dirname, '/client/build')))
+    app.get('*', (req, res) => {
+        res.sendFile(path.join(__dirname, '/client/build', 'index.html'))
+    })
+}
 // port
 const port = process.env.PORT || 8000;
 app.listen(port, () => {
