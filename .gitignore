@@ -5,11 +5,14 @@
 **/.DS_Store
 
 # environment config
-**/.env
+.env
 
 # production
 **/npm-debug.log*
+**/build
 
 # others
 **/Tasks.md
 **/dev
+/.vscode
+todo.txt

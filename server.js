@@ -42,16 +42,15 @@ app.use('/', projectRoutes);
 app.use('/', issueRoutes);
 app.use('/', commentRoutes);
 
-//app.use(express.static(`${__dirname}/../client/build`));
 
-//app.use(fallback(`${__dirname}/../client/build/index.html`));
+// Serve static files from the React frontend app
+app.use(express.static(path.join(__dirname, "client", "build")))
 
-if (process.env.NODE_ENV === 'production') {
-    app.use(express.static(path.join(__dirname, '/client/build')))
-    app.get('*', (req, res) => {
-        res.sendFile(path.join(__dirname, '/client/build', 'index.html'))
-    })
-}
+// Anything that doesn't match the above, send back index.html
+app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "client", "build", "index.html"));
+});
+
 // port
 const port = process.env.PORT || 8000;
 app.listen(port, () => {
